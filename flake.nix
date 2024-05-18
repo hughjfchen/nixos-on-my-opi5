@@ -172,7 +172,7 @@
                 Restart = "on-failure";
                 ExecStartPre = "${pkgs.coreutils-full}/bin/sleep 1";
                 ExecStart =
-                  "${pkgs.sshuttle}/bin/sshuttle --disable-ipv6 -x detachmentsoft.top -x detachmentsoft.cyou --latency-buffer-size 65536 --dns -r chenjf@detachmentsoft.top 0/0";
+                  "${pkgs.sshuttle}/bin/sshuttle -x detachmentsoft.top -x detachment-soft.top --latency-buffer-size 65536 --dns -r chenjf@detachmentsoft.top 0/0";
               };
             };
 
