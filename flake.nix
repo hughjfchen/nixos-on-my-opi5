@@ -11,8 +11,9 @@
     let
       pkgs = import nixpkgs {
         # Change localSystem to aarch64-linux and remove crossSystem if you are going to use this configuration on your SBC
-        localSystem = "x86_64-linux";
-        crossSystem = "aarch64-linux";
+        #localSystem = "x86_64-linux";
+        localSystem = "aarch64-linux";
+        #crossSystem = "aarch64-linux";
       };
     in {
       nixosConfigurations = {
@@ -40,7 +41,7 @@
             # Following are the nurmal NixOS configurations which you can find in a /etc/nixos/configuration.nix.
 
             nix.settings = {
-              experimental-features = [ "nix-command" "flakes" ];
+              experimental-features = [ "nix-command" "flakes" "repl-flake" ];
               # Binary Cache for Haskell.nix
               trusted-public-keys = [
                 "hydra.iohk.io:f/Ea+s+dFdN+3Y/G+FDgSq+a5NEWhJGzdjvKNGv0/EQ="
