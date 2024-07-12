@@ -1,6 +1,6 @@
 {
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.05";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-23.11";
     socle = {
       url = "github:dvdjv/socle/stable";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -78,6 +78,13 @@
               # some dev tools
             ];
 
+fonts.packages = with pkgs; [
+  noto-fonts
+  noto-fonts-extra
+  noto-fonts-cjk-sans
+  noto-fonts-cjk-serif
+  noto-fonts-emoji
+];
             # use systemd-network instead
             networking.useNetworkd = true;
             systemd.network.enable = true;
