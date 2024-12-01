@@ -1,6 +1,6 @@
 {
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-23.11";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.05";
     socle = {
       url = "github:dvdjv/socle/stable";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -41,7 +41,7 @@
             # Following are the nurmal NixOS configurations which you can find in a /etc/nixos/configuration.nix.
 
             nix.settings = {
-              experimental-features = [ "nix-command" "flakes" "repl-flake" ];
+              experimental-features = [ "nix-command" "flakes" ];
               # Binary Cache for Haskell.nix
               trusted-public-keys = [
                 "hydra.iohk.io:f/Ea+s+dFdN+3Y/G+FDgSq+a5NEWhJGzdjvKNGv0/EQ="
@@ -78,13 +78,14 @@
               # some dev tools
             ];
 
-fonts.packages = with pkgs; [
-  noto-fonts
-  noto-fonts-extra
-  noto-fonts-cjk-sans
-  noto-fonts-cjk-serif
-  noto-fonts-emoji
-];
+            fonts.packages = with pkgs; [
+              noto-fonts
+              noto-fonts-extra
+              noto-fonts-cjk-sans
+              noto-fonts-cjk-serif
+              noto-fonts-emoji
+            ];
+
             # use systemd-network instead
             networking.useNetworkd = true;
             systemd.network.enable = true;
